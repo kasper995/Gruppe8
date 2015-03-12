@@ -1,0 +1,6 @@
+C:\Users\mikkel\Documents\4s projekt\Gruppe8\Inventory\bin\Inventory.dll.config
+C:\Users\mikkel\Documents\4s projekt\Gruppe8\Inventory\bin\Inventory.dll
+C:\Users\mikkel\Documents\4s projekt\Gruppe8\Inventory\bin\Inventory.pdb
+C:\Users\mikkel\Documents\4s projekt\Gruppe8\Inventory\obj\Debug\Inventory.csprojResolveAssemblyReference.cache
+C:\Users\mikkel\Documents\4s projekt\Gruppe8\Inventory\obj\Debug\Inventory.dll
+C:\Users\mikkel\Documents\4s projekt\Gruppe8\Inventory\obj\Debug\Inventory.pdb
