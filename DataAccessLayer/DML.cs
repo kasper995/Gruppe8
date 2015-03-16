@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
 using Inventory;
@@ -28,7 +29,16 @@ namespace DataAccessLayer
 
          //maybe delegates area
         #region
-         
+
+        private delegate bool CreateHardwaredelegate(Hardware hardware);
+        private delegate bool UpdateHardwareDelegate(Hardware hardware);
+        private delegate bool DeleteHardwareDelegate(Hardware hardware);
+
+        private CreateHardwaredelegate newhardware;
+        private UpdateHardwareDelegate updatehwd;
+        private DeleteHardwareDelegate Deletehwd;
+
+
         #endregion
 
         //Singleton pattern for the database
@@ -70,37 +80,82 @@ namespace DataAccessLayer
 
 
 
-        public bool CreateNewComputer(Hardware hardware)
+        public bool CreateNewHardware(Hardware hardware)
         {
-            connection.ConnectionString = connectionstring;
 
+            switch (hardware.HardwareName)
+            {
+                case "computer":
+                    newhardware = CreateNewComputer;
+                    newhardware(hardware);
+                    
+                    break;
+
+                case "mus":
+                    newhardware = CreateNewMus;
+                    newhardware(hardware);
+                    break;
+
+                case "testenheder":
+                    newhardware = CreateNewTestEnheder;
+                    newhardware(hardware);
+                    break;
+
+                case "tlf":
+                    newhardware = CreateNewTlf;
+                    newhardware(hardware);
+                    break;
+
+                case "ovrighardware":
+                    newhardware = CreateNewOvrigHardware;
+                    newhardware(hardware);
+                    break;
+
+                default:
+                    return false;
+                    break;
+            }
+
+
+           
+
+        }
+
+
+
+
+        private bool CreateNewComputer(Hardware hardware)
+        {
+
+            connection.ConnectionString = connectionstring;
+            
             return false;
         }
 
         
 
-        public bool CreateNewMus(Hardware hardware)
+        private bool CreateNewMus(Hardware hardware)
         {
             connection.ConnectionString = connectionstring;
 
             return false;
         }
 
-        public bool CreateNewTestEnheder(Hardware hardware)
+        private bool CreateNewTestEnheder(Hardware hardware)
         {
             connection.ConnectionString = connectionstring;
 
             return false;
         }
 
-        public bool CreateNewTlf(Hardware hardware)
+        private bool CreateNewTlf(Hardware hardware)
         {
             connection.ConnectionString = connectionstring;
 
             return false;
         }
 
-        public bool CreateNewOvrigHardware(Hardware hardware)
+        private bool CreateNewOvrigHardware(Hardware hardware)
         {
             connection.ConnectionString = connectionstring;
 
@@ -128,35 +183,71 @@ namespace DataAccessLayer
 
         }
 
-        public bool UpdateComputer(Hardware hardware)
+
+        public bool UpdateHardware(Hardware hardware)
+        {
+            switch (hardware.HardwareName)
+            {
+                case "computer":
+                    updatehwd = UpdateComputer;
+                    updatehwd(hardware);
+                    break;
+
+                case "mus":
+                    updatehwd = UpdateMus;
+                    updatehwd(hardware);
+                    break;
+
+                case "testenheder":
+                    updatehwd = UpdateTestEnheder;
+                    updatehwd(hardware);
+                    break;
+
+                case "tlf":
+                    updatehwd = UpdateTlf;
+                    updatehwd(hardware);
+                    break;
+
+                case "ovrighardware":
+                    updatehwd = UpdateOvrigHardware;
+                    updatehwd(hardware);
+                    break;
+
+                default:
+                    return false;
+                    break;
+            }
+        }
+
+        private bool UpdateComputer(Hardware hardware)
         {
             connection.ConnectionString = connectionstring;
 
 
         }
 
-        public bool UpdateMus(Hardware hardware)
+        private bool UpdateMus(Hardware hardware)
         {
             connection.ConnectionString = connectionstring;
 
 
         }
 
-        public bool UpdateTestEnheder(Hardware hardware)
+        private bool UpdateTestEnheder(Hardware hardware)
         {
             connection.ConnectionString = connectionstring;
 
 
         }
 
-        public bool UpdateTlf(Hardware hardware)
+        private bool UpdateTlf(Hardware hardware)
         {
             connection.ConnectionString = connectionstring;
 
 
         }
 
-        public bool UpdateOvrigHardware(Hardware hardware)
+        private bool UpdateOvrigHardware(Hardware hardware)
         {
             connection.ConnectionString = connectionstring;
 
@@ -183,7 +274,46 @@ namespace DataAccessLayer
 
         }
 
-        public bool DeleteComputer(Hardware hardware)
+
+        public bool DeleteHardware(Hardware hardware)
+        {
+            switch (hardware.HardwareName)
+            {
+                case "computer":
+                    Deletehwd = DeleteComputer;
+                    Deletehwd(hardware);
+
+                    break;
+
+                case "mus":
+                    Deletehwd = DeleteMus;
+                    Deletehwd(hardware);
+                    break;
+
+                case "testenheder":
+                    Deletehwd = DeleteTestEnheder;
+                    Deletehwd(hardware);
+                    break;
+
+                case "tlf":
+                    Deletehwd = DeleteTlf;
+                    Deletehwd(hardware);
+                    break;
+
+                case "ovrighardware":
+                    Deletehwd = DeleteOvrigHardware;
+                    Deletehwd(hardware);
+                    break;
+
+                default:
+                    return false;
+                    break;
+            }
+        }
+
+
+
+        private bool DeleteComputer(Hardware hardware)
         {
             connection.ConnectionString = connectionstring;
 
@@ -191,28 +321,28 @@ namespace DataAccessLayer
         }
 
 
-        public bool DeleteMus(Hardware hardware)
+        private bool DeleteMus(Hardware hardware)
         {
             connection.ConnectionString = connectionstring;
 
 
         }
 
-        public bool DeleteTestEnheder(Hardware hardware)
+        private bool DeleteTestEnheder(Hardware hardware)
         {
             connection.ConnectionString = connectionstring;
 
 
         }
 
-        public bool DeleteTlf(Hardware hardware)
+        private bool DeleteTlf(Hardware hardware)
         {
             connection.ConnectionString = connectionstring;
 
 
         }
 
-        public bool DeleteOvrigHardware(Hardware hardware)
+        private bool DeleteOvrigHardware(Hardware hardware)
         {
             connection.ConnectionString = connectionstring;
 
