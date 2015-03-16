@@ -18,6 +18,18 @@ namespace Inventory
         public string Operativsystem { get; set; }
 
 
+        public Void Create()
+        {
+
+        }
+        public Void Update()
+        {
+
+        }
+        public Void Delete()
+        {
+
+        }
 
        
         
