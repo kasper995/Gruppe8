@@ -4,6 +4,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Inventory;
 
 namespace DataAccessLayer
 {
@@ -48,7 +49,7 @@ namespace DataAccessLayer
 
          //createRegion
         #region
-        public bool CreateNewMedarbejder(string name, string initials)
+        public bool CreateNewMedarbejder(Employee employee)
         {
             connection.ConnectionString = connectionstring;
             
@@ -65,30 +66,35 @@ namespace DataAccessLayer
         }
 
 
-         //TODO Discuss method overload over delegates
-        public bool CreateNewComputer()
+        //TODO Sørg for at der bliver implementeret modelklasser fra logic
+
+
+
+        public bool CreateNewComputer(Hardware hardware)
         {
             connection.ConnectionString = connectionstring;
 
 
         }
 
-        public bool CreateNewMus()
+        
+
+        public bool CreateNewMus(Hardware hardware)
         {
             connection.ConnectionString = connectionstring;
         }
 
-        public bool CreateNewTestEnheder()
+        public bool CreateNewTestEnheder(Hardware hardware)
         {
             connection.ConnectionString = connectionstring;
         }
 
-        public bool CreateNewTlf()
+        public bool CreateNewTlf(Hardware hardware)
         {
             connection.ConnectionString = connectionstring;
         }
 
-        public bool CreateNewOvrigHardware()
+        public bool CreateNewOvrigHardware(Hardware hardware)
         {
             connection.ConnectionString = connectionstring;
         }
@@ -100,7 +106,7 @@ namespace DataAccessLayer
         //updateRegion
         #region
 
-        public bool UpdateMedarbejder(string name, string initials, string newinfo)
+        public bool UpdateMedarbejder(Employee employee, string newinfo)
         {
             connection.ConnectionString = connectionstring;
 
@@ -114,35 +120,35 @@ namespace DataAccessLayer
 
         }
 
-        public bool UpdateComputer(string newinfo)
+        public bool UpdateComputer(Hardware hardware)
         {
             connection.ConnectionString = connectionstring;
 
 
         }
 
-        public bool UpdateMus(string newinfo)
+        public bool UpdateMus(Hardware hardware)
         {
             connection.ConnectionString = connectionstring;
 
 
         }
 
-        public bool UpdateTestEnheder(string newinfo)
+        public bool UpdateTestEnheder(Hardware hardware)
         {
             connection.ConnectionString = connectionstring;
 
 
         }
 
-        public bool UpdateTlf(string newinfo)
+        public bool UpdateTlf(Hardware hardware)
         {
             connection.ConnectionString = connectionstring;
 
 
         }
 
-        public bool UpdateOvrigHardware(string newinfo)
+        public bool UpdateOvrigHardware(Hardware hardware)
         {
             connection.ConnectionString = connectionstring;
 
@@ -154,7 +160,7 @@ namespace DataAccessLayer
         //deleteRegion
         #region
 
-        public bool DeleteMedarbejder(string name, string initials)
+        public bool DeleteMedarbejder(Employee employee)
         {
             connection.ConnectionString = connectionstring;
 
@@ -169,7 +175,7 @@ namespace DataAccessLayer
 
         }
 
-        public bool DeleteComputer()
+        public bool DeleteComputer(Hardware hardware)
         {
             connection.ConnectionString = connectionstring;
 
@@ -177,28 +183,28 @@ namespace DataAccessLayer
         }
 
 
-        public bool DeleteMus()
+        public bool DeleteMus(Hardware hardware)
         {
             connection.ConnectionString = connectionstring;
 
 
         }
 
-        public bool DeleteTestEnheder()
+        public bool DeleteTestEnheder(Hardware hardware)
         {
             connection.ConnectionString = connectionstring;
 
 
         }
 
-        public bool DeleteTlf()
+        public bool DeleteTlf(Hardware hardware)
         {
             connection.ConnectionString = connectionstring;
 
 
         }
 
-        public bool DeleteOvrigHardware()
+        public bool DeleteOvrigHardware(Hardware hardware)
         {
             connection.ConnectionString = connectionstring;
 
