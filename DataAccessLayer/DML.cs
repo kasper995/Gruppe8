@@ -52,8 +52,8 @@ namespace DataAccessLayer
         public bool CreateNewMedarbejder(Employee employee)
         {
             connection.ConnectionString = connectionstring;
-            
 
+            return false;
         }
 
 
@@ -62,7 +62,7 @@ namespace DataAccessLayer
         {
             connection.ConnectionString = connectionstring;
 
-
+            return false;
         }
 
 
@@ -74,7 +74,7 @@ namespace DataAccessLayer
         {
             connection.ConnectionString = connectionstring;
 
-
+            return false;
         }
 
         
@@ -82,21 +82,29 @@ namespace DataAccessLayer
         public bool CreateNewMus(Hardware hardware)
         {
             connection.ConnectionString = connectionstring;
+
+            return false;
         }
 
         public bool CreateNewTestEnheder(Hardware hardware)
         {
             connection.ConnectionString = connectionstring;
+
+            return false;
         }
 
         public bool CreateNewTlf(Hardware hardware)
         {
             connection.ConnectionString = connectionstring;
+
+            return false;
         }
 
         public bool CreateNewOvrigHardware(Hardware hardware)
         {
             connection.ConnectionString = connectionstring;
+
+            return false;
         }
 
 
