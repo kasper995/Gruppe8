@@ -6,6 +6,8 @@ using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
 using Inventory;
+using Logic;
+using ModelClasses;
 
 namespace DataAccessLayer
 {
@@ -13,7 +15,7 @@ namespace DataAccessLayer
     /// <summary>
     /// Contains all methods for modeling the database. Use this one for all access.
     /// </summary>
-     class DML
+     public class DML
     {
 
         // properties, varible, instanziation
@@ -30,9 +32,9 @@ namespace DataAccessLayer
          //maybe delegates area
         #region
 
-        private delegate bool CreateHardwaredelegate(Hardware hardware);
-        private delegate bool UpdateHardwareDelegate(Hardware hardware);
-        private delegate bool DeleteHardwareDelegate(Hardware hardware);
+        private delegate bool CreateHardwaredelegate(IHardware hardware);
+        private delegate bool UpdateHardwareDelegate(IHardware hardware);
+        private delegate bool DeleteHardwareDelegate(IHardware hardware);
 
         private CreateHardwaredelegate newhardware;
         private UpdateHardwareDelegate updatehwd;
@@ -80,7 +82,7 @@ namespace DataAccessLayer
 
 
 
-        public bool CreateNewHardware(Hardware hardware)
+        public bool CreateNewHardware(IHardware hardware)
         {
 
             switch (hardware.HardwareName)
@@ -124,7 +126,7 @@ namespace DataAccessLayer
 
 
 
-        private bool CreateNewComputer(Hardware hardware)
+        private bool CreateNewComputer(IHardware hardware)
         {
 
             connection.ConnectionString = connectionstring;
@@ -134,28 +136,28 @@ namespace DataAccessLayer
 
         
 
-        private bool CreateNewMus(Hardware hardware)
+        private bool CreateNewMus(IHardware hardware)
         {
             connection.ConnectionString = connectionstring;
 
             return false;
         }
 
-        private bool CreateNewTestEnheder(Hardware hardware)
+        private bool CreateNewTestEnheder(IHardware hardware)
         {
             connection.ConnectionString = connectionstring;
 
             return false;
         }
 
-        private bool CreateNewTlf(Hardware hardware)
+        private bool CreateNewTlf(IHardware hardware)
         {
             connection.ConnectionString = connectionstring;
 
             return false;
         }
 
-        private bool CreateNewOvrigHardware(Hardware hardware)
+        private bool CreateNewOvrigHardware(IHardware hardware)
         {
             connection.ConnectionString = connectionstring;
 
@@ -184,7 +186,7 @@ namespace DataAccessLayer
         }
 
 
-        public bool UpdateHardware(Hardware hardware)
+        public bool UpdateHardware(IHardware hardware)
         {
             switch (hardware.HardwareName)
             {
@@ -219,35 +221,35 @@ namespace DataAccessLayer
             }
         }
 
-        private bool UpdateComputer(Hardware hardware)
+        private bool UpdateComputer(IHardware hardware)
         {
             connection.ConnectionString = connectionstring;
 
 
         }
 
-        private bool UpdateMus(Hardware hardware)
+        private bool UpdateMus(IHardware hardware)
         {
             connection.ConnectionString = connectionstring;
 
 
         }
 
-        private bool UpdateTestEnheder(Hardware hardware)
+        private bool UpdateTestEnheder(IHardware hardware)
         {
             connection.ConnectionString = connectionstring;
 
 
         }
 
-        private bool UpdateTlf(Hardware hardware)
+        private bool UpdateTlf(IHardware hardware)
         {
             connection.ConnectionString = connectionstring;
 
 
         }
 
-        private bool UpdateOvrigHardware(Hardware hardware)
+        private bool UpdateOvrigHardware(IHardware hardware)
         {
             connection.ConnectionString = connectionstring;
 
@@ -275,7 +277,7 @@ namespace DataAccessLayer
         }
 
 
-        public bool DeleteHardware(Hardware hardware)
+        public bool DeleteHardware(IHardware hardware)
         {
             switch (hardware.HardwareName)
             {
@@ -313,7 +315,7 @@ namespace DataAccessLayer
 
 
 
-        private bool DeleteComputer(Hardware hardware)
+        private bool DeleteComputer(IHardware hardware)
         {
             connection.ConnectionString = connectionstring;
 
@@ -321,28 +323,28 @@ namespace DataAccessLayer
         }
 
 
-        private bool DeleteMus(Hardware hardware)
+        private bool DeleteMus(IHardware hardware)
         {
             connection.ConnectionString = connectionstring;
 
 
         }
 
-        private bool DeleteTestEnheder(Hardware hardware)
+        private bool DeleteTestEnheder(IHardware hardware)
         {
             connection.ConnectionString = connectionstring;
 
 
         }
 
-        private bool DeleteTlf(Hardware hardware)
+        private bool DeleteTlf(IHardware hardware)
         {
             connection.ConnectionString = connectionstring;
 
 
         }
 
-        private bool DeleteOvrigHardware(Hardware hardware)
+        private bool DeleteOvrigHardware(IHardware hardware)
         {
             connection.ConnectionString = connectionstring;
 

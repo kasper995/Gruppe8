@@ -1,37 +1,21 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 
-namespace Inventory
+namespace ModelClasses
 {
-    public class Hardware
+    public interface IHardware
     {
-        
-
-        public string HardwareName { get; set; }
-        public string Model { get; set; }
-        public string Location { get; set; }
-        public DateTime DateOfChange { get; set; }
-        public DateTime DateOfPurchase { get; set; }
-        public long SerieNUmmer { get; set; }
-        public string Operativsystem { get; set; }
 
 
-        public Void Create()
-        {
+        string HardwareName { get; set; }
+        string Model { get; set; }
+        string Location { get; set; }
+        DateTime DateOfChange { get; set; }
+        DateTime DateOfPurchase { get; set; }
+        long SerieNUmmer { get; set; }
+        string Operativsystem { get; set; }
 
-        }
-        public Void Update()
-        {
 
-        }
-        public Void Delete()
-        {
 
-        }
 
-       
-        
     }
 }
