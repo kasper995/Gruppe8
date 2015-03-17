@@ -55,6 +55,24 @@
     <Compile Include="UnitTestDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataAccessLayer\DataAccessLayer.csproj">
+      <Project>{59e9e52b-a767-4d98-8c64-8d29aab55308}</Project>
+      <Name>DataAccessLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FrontEnd\FrontEnd.csproj">
+      <Project>{fffbcd3f-ca92-4b9c-b11e-e2cd359ca39c}</Project>
+      <Name>FrontEnd</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Logic\Logic.csproj">
+      <Project>{26430f6d-28d5-436f-aa91-b9d41a2fbc4d}</Project>
+      <Name>Logic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ModelClasses\ModelClasses.csproj">
+      <Project>{da39e8f4-13c3-4757-ac9b-8845c9d103d1}</Project>
+      <Name>ModelClasses</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>

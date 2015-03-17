@@ -84,9 +84,9 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Logic\Logic.csproj">
-      <Project>{26430f6d-28d5-436f-aa91-b9d41a2fbc4d}</Project>
-      <Name>Logic</Name>
+    <ProjectReference Include="..\ModelClasses\ModelClasses.csproj">
+      <Project>{da39e8f4-13c3-4757-ac9b-8845c9d103d1}</Project>
+      <Name>ModelClasses</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
