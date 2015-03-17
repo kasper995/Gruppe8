@@ -14,8 +14,8 @@ namespace Inventory
         public string Location { get; set; }
         public DateTime DateOfChange { get; set; }
         public DateTime DateOfPurchase { get; set; }
-        public long SerieNUmmer { get; set; }
-        public string Operativsystem { get; set; }
+        public long SerialNumber { get; set; }
+        public string OperatingSystem{ get; set; }
 
 
         public Void Create()
