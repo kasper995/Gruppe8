@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace ModelClasses
 {
-    public class Class1
+    public class Model
     {
+        public string model { get; set; }
+        public string brand { get; set; }
+
     }
 }

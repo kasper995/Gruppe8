@@ -6,6 +6,7 @@ using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
 using Inventory;
+using ModelClasses;
 
 namespace DataAccessLayer
 {
@@ -13,12 +14,11 @@ namespace DataAccessLayer
     /// <summary>
     /// Contains all methods for modeling the database. Use this one for all access.
     /// </summary>
-     class DML
+     public class DML
     {
 
-        // properties, varible, instanziation
-        #region
-        
+        #region // properties, varible, instanziation
+
         private static DML _instance = new DML();
 
          //TODO remember to edit this to datadirectory later on, on release. also change this to your specifik database path when doin dev work.
@@ -27,8 +27,8 @@ namespace DataAccessLayer
         private SqlCommand command = new SqlCommand();
         #endregion
 
-         //maybe delegates area
-        #region
+       
+        #region // Delegates
 
         private delegate bool CreateHardwaredelegate(Hardware hardware);
         private delegate bool UpdateHardwareDelegate(Hardware hardware);
@@ -41,8 +41,8 @@ namespace DataAccessLayer
 
         #endregion
 
-        //Singleton pattern for the database
-        #region
+        
+        #region // Singleton
         private DML()
         {
             
@@ -57,8 +57,8 @@ namespace DataAccessLayer
 
 
 
-         //createRegion
-        #region
+         
+        #region // CreateRegion
         public bool CreateNewMedarbejder(Employee employee)
         {
             connection.ConnectionString = connectionstring;
@@ -68,7 +68,7 @@ namespace DataAccessLayer
 
 
 
-        public bool CreateNewModel(string model, string brand)
+        public bool CreateNewModel(Model model)
         {
             connection.ConnectionString = connectionstring;
 
@@ -166,17 +166,17 @@ namespace DataAccessLayer
 
         #endregion
 
-        //updateRegion
-        #region
+        
+        #region // UpdateRegion
 
-        public bool UpdateMedarbejder(Employee employee, string newinfo)
+        public bool UpdateMedarbejder(Employee employee)
         {
             connection.ConnectionString = connectionstring;
 
 
         }
 
-        public bool UpdateModel(string model, string brand, string newinfo)
+        public bool UpdateModel(Model model)
         {
             connection.ConnectionString = connectionstring;
 
@@ -256,8 +256,8 @@ namespace DataAccessLayer
 
         #endregion
 
-        //deleteRegion
-        #region
+        
+        #region // deleteRegion
 
         public bool DeleteMedarbejder(Employee employee)
         {
@@ -267,7 +267,7 @@ namespace DataAccessLayer
         }
 
 
-        public bool DeleteModel(string model, string brand)
+        public bool DeleteModel(Model model)
         {
             connection.ConnectionString = connectionstring;
 
@@ -351,6 +351,28 @@ namespace DataAccessLayer
 
         #endregion
 
-       
+        
+        #region // GetRegion
+
+        public Employee GetEmployee()
+        {
+            
+        }
+
+        public Model GetModel()
+        {
+            
+        }
+
+
+        public Hardware GetHardware()
+        {
+            
+        }
+
+
+        #endregion
+
+
     }
 }
