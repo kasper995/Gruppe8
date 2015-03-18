@@ -53,3 +53,6 @@ C:\Users\mikkel\Documents\4s projekt\Gruppe8\FrontEnd\bin\Microsoft.Owin.Securit
 C:\Users\mikkel\Documents\4s projekt\Gruppe8\FrontEnd\obj\Debug\FrontEnd.csprojResolveAssemblyReference.cache
 C:\Users\mikkel\Documents\4s projekt\Gruppe8\FrontEnd\obj\Debug\FrontEnd.dll
 C:\Users\mikkel\Documents\4s projekt\Gruppe8\FrontEnd\obj\Debug\FrontEnd.pdb
+D:\Skole\4 System Development\Gruppe8\FrontEnd\obj\Debug\FrontEnd.csprojResolveAssemblyReference.cache
+D:\Skole\4 System Development\Gruppe8\FrontEnd\obj\Debug\FrontEnd.dll
+D:\Skole\4 System Development\Gruppe8\FrontEnd\obj\Debug\FrontEnd.pdb
